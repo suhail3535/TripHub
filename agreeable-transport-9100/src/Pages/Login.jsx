@@ -2,7 +2,7 @@ import React from 'react'
 
 const Login = () => {
   return (
-    <div>Login</div>
+    <div style={{textAlign:"center", marginTop:"20px"}} >Welcome to Login page</div>
   )
 }
 

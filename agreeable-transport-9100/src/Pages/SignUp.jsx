@@ -2,7 +2,7 @@ import React from 'react'
 
 const SignUp = () => {
   return (
-    <div>SignUp</div>
+    <div style={{textAlign:"center", marginTop:"20px"}} >Welcome to SignUp Page</div>
   )
 }
 
