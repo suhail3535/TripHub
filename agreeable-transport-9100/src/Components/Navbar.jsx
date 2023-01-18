@@ -16,6 +16,7 @@ import {
     useBreakpointValue,
     useDisclosure,
   } from '@chakra-ui/react';
+ 
   import {
     HamburgerIcon,
     CloseIcon,
@@ -27,8 +28,10 @@ import {
     const { isOpen, onToggle } = useDisclosure();
   
     return (
-      <Box border={"1px solid red"} mt="50px">
-        <Flex
+     <Box backgroundColor={'#124072'} height="300px">
+
+<Box border={"1px solid red"} w="95%" m="auto" marginTop={1}>
+        <Flex 
           bg={useColorModeValue('white', 'gray.800')}
           color={useColorModeValue('gray.600', 'white')}
           minH={'60px'}
@@ -36,6 +39,7 @@ import {
           px={{ base: 4 }}
           borderBottom={1}
           borderStyle={'solid'}
+      
           borderColor={useColorModeValue('gray.200', 'gray.900')}
           align={'center'}>
           <Flex
@@ -51,7 +55,31 @@ import {
               aria-label={'Toggle Navigation'}
             />
           </Flex>
-          <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
+          <Flex flex={{ base: 1 }} justify={'space-evenly'}>
+            <Text
+              textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
+              fontFamily={'heading'}
+              color={useColorModeValue('gray.800', 'white')}>
+              logo pic
+            </Text>
+            <div>
+            <span>
+            
+            </span>
+            <p>Flights</p>
+          </div>
+            <Text
+              textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
+              fontFamily={'heading'}
+              color={useColorModeValue('gray.800', 'white')}>
+              logo pic
+            </Text>
+            <Text
+              textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
+              fontFamily={'heading'}
+              color={useColorModeValue('gray.800', 'white')}>
+              logo pic
+            </Text>
             <Text
               textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
               fontFamily={'heading'}
@@ -64,19 +92,26 @@ import {
             </Flex>
           </Flex>
   
-          <Stack
+          <Stack 
+          
             flex={{ base: 1, md: 0 }}
-            justify={'flex-end'}
+           
             direction={'row'}
-            spacing={6}>
-            <Button
-              as={'a'}
+            spacing={10} border="1px solid red" >
+               <Button
+              display={{ base: 'none', md: 'inline-flex' }}
               fontSize={'sm'}
-              fontWeight={400}
-              variant={'link'}
-              href={'#'}>
-              Sign In
+              fontWeight={600}
+              color={'white'}
+              bg={'pink.400'}
+              href={'#'}
+              _hover={{
+                bg: 'pink.300',
+              }}>
+              Login
             </Button>
+         
+       
             <Button
               display={{ base: 'none', md: 'inline-flex' }}
               fontSize={'sm'}
@@ -96,6 +131,8 @@ import {
        
         </Collapse>
       </Box>
+
+     </Box>
     );
   }
   
