@@ -2,7 +2,7 @@ import React from 'react'
 
 const Hotel = () => {
   return (
-    <div>Hotel</div>
+    <div style={{textAlign:"center", marginTop:"20px"}}>Welcome to Hotel Page</div>
   )
 }
 
