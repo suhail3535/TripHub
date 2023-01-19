@@ -1,9 +1,33 @@
-import React from 'react'
+import React from "react";
+import {
+  Input,
+  Icon,
+  Image,
+  Stack,
+  Heading,
+  Text,
+  Button,
+  Box,
+} from "@chakra-ui/react";
+
+import styles from './mystyle.module.css';
+import { Card, CardHeader, CardBody, CardFooter } from "@chakra-ui/react";
+
 
 const Home = () => {
   return (
-    <div>Home</div>
-  )
-}
+   <>
 
-export default Home
+
+
+
+
+    
+   </>
+ 
+    
+    
+  )
+};
+
+export default Home;
