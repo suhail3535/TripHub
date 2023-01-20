@@ -1,21 +1,21 @@
 import React from "react";
-import mystyle from "./Mystyle.module.css";
+import mystyle from "./mystyle.module.css";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import Slider from "../Component/Slider";
 import data from "../data.json";
+import SmallBottom from "./Top";
+import { Button } from "@chakra-ui/react";
 
 import { Image, Heading, Text, Container } from "@chakra-ui/react";
+import { MultipleSlidesExample, BigSlidesExample } from "./Slidebar";
+import { Bigslide, TripMoney } from "./Slidecss";
 
 const Home = () => {
   return (
     <>
       {/* TOPSECTION */}
       {/* searchbar */}
-      
-      
-
-
 
       <div className={mystyle.srch}>
         <form className={mystyle.frm}>
@@ -109,12 +109,104 @@ const Home = () => {
           <div></div>
         </form>
       </div>
+      <div className={mystyle.bar}>
+        <input
+          className={mystyle.srh}
+          type="search"
+          placeholder="Search"
+        ></input>
+        <Button
+          style={{
+            border: "1px solid white",
+            height: "48px",
+            width: "200px",
+            marginLeft: "45px",
+            marginBottom: "5px",
+          }}
+          colorScheme="twitter"
+        >
+          {" "}
+          Search{" "}
+        </Button>
+      </div>
+      <SmallBottom />
+      <div className={mystyle.myslider}>
+   
+        <Slider start={data.banner.start} />
+      </div>
+
+      <div
+        style={{
+          background: "#ebe7e7",
+          paddingTop: "10px",
+          border: "0px solid blue",
+          width: "90%",
+          margin: "auto",
+        }}
+      >
+        <div style={{ width: "90%", margin: "auto" }}>
+          <MultipleSlidesExample />
+        </div>
+
+        <Bigslide>
+          <div className="supreoffers">
+            <h1>Super Offers</h1>
+            <div>
+              <h3>ALL OFFERS</h3>
+              <h3>BANK OFFERS</h3>
+              <h3>DOMESTIC FLIGHTS</h3>
+              <h3>MORE</h3>
+            </div>
+          </div>
+
+          <BigSlidesExample className="bigslideex"></BigSlidesExample>
+        </Bigslide>
+
+        <TripMoney>
+          <div className="maindiv">
+            <div id="div2" style={{ borderColor: "#e47dad" }}>
+              <img
+                src="https://www.tripmoney.com/ext/static/TravelLoan/travelLoan.png"
+                alt=""
+              />
+              <div>
+                <div className="spa1n"></div>
+                <h3>Personal loan</h3>
+                <p>Get upto ₹1 lakh for booking flights, hotels & more.</p>
+              </div>
+              <div className="span2"></div>
+            </div>
+            <div id="div2" style={{ borderColor: "#dde47d" }}>
+              <img
+                src="https://www.tripmoney.com/ext/static/credit-card/cc@3x.png"
+                alt=""
+              />
+              <div>
+                <div className="spa1n"></div>
+                <h3>Credit cards</h3>
+                <p>Get instant approval & unmatched privileges.</p>
+              </div>
+              <div className="span2"></div>
+            </div>
+            <div id="div2" style={{ borderColor: "#7dbee4" }}>
+              <img
+                src="https://www.tripmoney.com/ext/static/PL/pl.png"
+                alt=""
+              />
+              <div>
+                <div className="spa1n"></div>
+                <h3>Travel loan</h3>
+                <p>Get approval for ₹30,00,000 at low interest rates.</p>
+              </div>
+              <div className="span2"></div>
+            </div>
+          </div>
+        </TripMoney>
+      </div>
 
       {/* Sliderpart */}
 
-      <div className={mystyle.maindiv}>
-        <Slider start={data.banner.start} />
-      </div>
+      <div className={mystyle.maindiv}></div>
 
       {/* ///mid section/// */}
       <div className={mystyle.bottom}>

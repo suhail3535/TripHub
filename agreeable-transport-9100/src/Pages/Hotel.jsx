@@ -1,6 +1,16 @@
-import { Card,Heading,Text } from "@chakra-ui/react";
+import {Heading,Text,Button } from "@chakra-ui/react";
 import React from "react";
-import mystyle from "./Mystyle.module.css";
+import mystyle from "./mystyle.module.css";
+import {
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+} from "@chakra-ui/react";
+
 
 const data = [
   {
@@ -181,21 +191,40 @@ const data = [
 ];
 
 const Hotel = () => {
+
+  const [price, setPrice] = React.useState(0)
+  const hanlde = () => {
+    setPrice((prevAmount)=>prevAmount+1)
+  }
+
+
+
+
+
+
   return (
     <>
+   
       <input className={mystyle.search} type="text" placeholder="Search" />
       <div className={mystyle.hotelpage}>
         {data.map((e) => (
           <div className={mystyle.Cardpart} id={e.id}>
-            <img className={mystyle.image} src={e.avatar} />
-            <Heading as='h4' size='sm'>{e.title}</Heading> 
-        
+            <img className={mystyle.image} src={e.avatar} alt="" />
+            <Heading as="h4" size="sm">
+              {e.title}
+            </Heading>
+
             <Text> Categary:{e.categary} </Text>
-            <Heading as='h5' size='sm'>
-            Price:{e.price}
-           </Heading>
-           
+            <Heading as="h5" size="sm">
+              Price:{e.price}
+            </Heading>
+
             <Text>Ratting:{e.Ratting}</Text>
+      
+          
+              {/* <Button  onClick={hanlde} style={{ margin: "10px" }} colorScheme="telegram">
+                BOOK NOW
+              </Button> */}
           </div>
         ))}
       </div>
