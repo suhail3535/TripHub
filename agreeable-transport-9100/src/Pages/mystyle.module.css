@@ -8,7 +8,7 @@
 }
 
 .frm {
-  border: px solid green;
+  border: 0px solid green;
   width: 90%;
   margin: 10px auto;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -41,7 +41,7 @@
   width: 90%;
   margin: auto;
   margin-top: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 5px;
 }
 .card {
   border: 0px solid yellow;
@@ -58,11 +58,31 @@
 }
 
 .search {
-  border: 2px solid black;
+  border: 0px solid black;
   margin: 10px 10px 10px 5px;
   width: 30%;
   height: 40px;
   border-radius: 5px;
+}
+.bar{
+
+ width: 90%;
+ margin: auto;
+ height: 50px;
+ border-radius: 1px;
+box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;     
+          
+
+}
+.srh{
+border:1px solid gray;
+margin: 7px 5px 5px 20px;
+ margin: auto;
+ height: 50px;
+ border-radius: 5px;
+ width: 82%;
+ text-align: center;
+
 }
 
 .btn {
@@ -70,6 +90,7 @@
   padding: 1px;
   border: none;
   color: teal;
+  font-weight: bold;
   padding: 10px;
 }
 .lastpart {
@@ -97,8 +118,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   text-align: center;
-  gap: 10px;
-
+  gap: 30px;
   padding: 2rem;
 }
 .image {
@@ -109,6 +129,8 @@
 .Cardpart {
   border: 0px solid pink;
   padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
 }
 .foot1 {
   border: 0px solid blue;
@@ -124,4 +146,11 @@
 .txt {
   margin: 8px 0px 5px 15px;
   font-size: 13px;
+}
+
+.myslider{
+  border: 0px solid green;
+  width: 90%;
+  margin: 20px auto;
+  margin-top: -56px;
 }

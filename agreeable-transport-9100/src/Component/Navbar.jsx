@@ -1,10 +1,9 @@
 import React from "react";
+import Payment from "../Pages/Payment";
 import Hotel from "../Pages/Hotel";
 import Login from "../Pages/Login";
 import SignUp from "../Pages/SignUp";
 import { Link } from "react-router-dom";
-import { Image, Box, Button } from "@chakra-ui/react";
-import { Container } from "@chakra-ui/react";
 import FlightIcon from "@mui/icons-material/Flight";
 import HotelIcon from "@mui/icons-material/Hotel";
 import HomeWorkIcon from "@mui/icons-material/HomeWork";
@@ -13,13 +12,10 @@ import TrainIcon from "@mui/icons-material/Train";
 import DirectionsBusFilledIcon from "@mui/icons-material/DirectionsBusFilled";
 import LocalTaxiIcon from "@mui/icons-material/LocalTaxi";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
-import DownhillSkiingIcon from "@mui/icons-material/DownhillSkiing";
-import FlightTakeoffIcon from "@mui/icons-material/FlightTakeoff";
-import Flight from "@mui/icons-material/Flight";
 import PersonIcon from "@mui/icons-material/Person";
+import { Box } from "@chakra-ui/react";
 
-
-function Navbar() {
+function Navbar({ price }) {
   return (
     <>
       <Box
@@ -30,7 +26,7 @@ function Navbar() {
           display: "flex",
           justifyContent: "space-evenly",
           padding: "10px",
-          boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px"
+          boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
         }}
       >
         <div className="imgdiv">
@@ -49,8 +45,7 @@ function Navbar() {
           <span>
             <FlightIcon style={{ fontSize: 30, padding: 4 }}></FlightIcon>
           </span>
-          <Link >
-            
+          <Link>
             <p>Flights</p>{" "}
           </Link>
         </div>
@@ -59,17 +54,17 @@ function Navbar() {
           <span>
             <HotelIcon style={{ fontSize: 30, padding: 4 }}></HotelIcon>
           </span>
-          <Link to="Hotel" element={<Hotel />}> 
-          <p>Hotels</p> 
+          <Link to="Hotel" element={<Hotel />}>
+            <p>Hotels</p>
           </Link>
         </div>
         <div>
           <span>
             <HomeWorkIcon style={{ fontSize: 30, padding: 4 }}></HomeWorkIcon>
           </span>
-          <Link > 
-          <p>Homestays</p>
-          </Link> 
+          <Link>
+            <p>Homestays</p>
+          </Link>
         </div>
         <div>
           <span>
@@ -79,16 +74,15 @@ function Navbar() {
           </span>
 
           <Link>
-          <p>Hoiday packages</p>
-          </Link>  
-
+            <p>Hoiday packages</p>
+          </Link>
         </div>
         <div>
           <span>
             <TrainIcon style={{ fontSize: 30, padding: 4 }}></TrainIcon>
           </span>
-          <Link > 
-          <p>Trains</p>
+          <Link>
+            <p>Trains</p>
           </Link>
         </div>
         <div>
@@ -97,17 +91,17 @@ function Navbar() {
               style={{ fontSize: 30, padding: 4 }}
             ></DirectionsBusFilledIcon>
           </span>
-          <Link> 
-          <p>Buses</p>
+          <Link>
+            <p>Buses</p>
           </Link>
         </div>
         <div>
           <span>
             <LocalTaxiIcon style={{ fontSize: 30, padding: 4 }}></LocalTaxiIcon>
           </span>
-          <Link> 
-          <p>Cabs</p>
-           </Link>
+          <Link>
+            <p>Cabs</p>
+          </Link>
         </div>
         <div>
           <span>
@@ -115,29 +109,28 @@ function Navbar() {
               style={{ fontSize: 30, padding: 4 }}
             ></CreditCardIcon>
           </span>
-          <Link > 
-          <p>Visa</p>
+          <Link to="payment" element={<Payment />}>
+            <p>Payment:0</p>
           </Link>
         </div>
         <div>
           <span>
             <PersonIcon style={{ fontSize: 30, padding: 4 }}></PersonIcon>
           </span>
-          <Link to="Login" element={<Login />}> 
-          <h4>Login User</h4>
+          <Link to="Login" element={<Login />}>
+            <h4>Login User</h4>
           </Link>
         </div>
         <div>
           <span>
             <PersonIcon style={{ fontSize: 30, padding: 4 }}></PersonIcon>
           </span>
-          <Link to="SignUp" element={<SignUp/>}> {""}
-          <h4>Register</h4>
+          <Link to="SignUp" element={<SignUp />}>
+            {" "}
+            {""}
+            <h4>Register</h4>
           </Link>
         </div>
-
-
-
       </Box>
     </>
   );
