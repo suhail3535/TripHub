@@ -3,6 +3,8 @@ import Hotel from "../Pages/Hotel";
 import Login from "../Pages/Login";
 import SingleProductPage from "../Pages/SingleProductPage";
 import OrderSuccessfull from "../Pages/OrderSuccessfull";
+import Cart from "../Pages/Cart";
+
 import PaymentForm from "../Pages/PaymentForm";
 import { Link } from "react-router-dom";
 import FlightIcon from "@mui/icons-material/Flight";
@@ -14,6 +16,7 @@ import DirectionsBusFilledIcon from "@mui/icons-material/DirectionsBusFilled";
 import LocalTaxiIcon from "@mui/icons-material/LocalTaxi";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
 import PersonIcon from "@mui/icons-material/Person";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 import { Box } from "@chakra-ui/react";
 
 function Navbar({ price }) {
@@ -59,14 +62,7 @@ function Navbar({ price }) {
             <p>Hotels</p>
           </Link>
         </div>
-        <div>
-          <span>
-            <HomeWorkIcon style={{ fontSize: 30, padding: 4 }}></HomeWorkIcon>
-          </span>
-          <Link>
-            <p>Homestays</p>
-          </Link>
-        </div>
+
         <div>
           <span>
             <HolidayVillageIcon
@@ -112,7 +108,15 @@ function Navbar({ price }) {
             ></CreditCardIcon>
           </span>
           <Link to="PaymentForm" element={<PaymentForm />}>
-            <p>Payment:0</p>
+            <p>Payment</p>
+          </Link>
+        </div>
+        <div>
+          <span>
+            <FavoriteIcon style={{ fontSize: 30, padding: 4 }}></FavoriteIcon>
+          </span>
+          <Link to="Cart" element={<Cart />}>
+            <p>Favourite</p>
           </Link>
         </div>
         <div>
