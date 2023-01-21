@@ -1,8 +1,9 @@
 import React from "react";
-import Payment from "../Pages/Payment";
 import Hotel from "../Pages/Hotel";
 import Login from "../Pages/Login";
-import SignUp from "../Pages/SignUp";
+import SingleProductPage from "../Pages/SingleProductPage";
+import OrderSuccessfull from "../Pages/OrderSuccessfull";
+import PaymentForm from "../Pages/PaymentForm";
 import { Link } from "react-router-dom";
 import FlightIcon from "@mui/icons-material/Flight";
 import HotelIcon from "@mui/icons-material/Hotel";
@@ -99,7 +100,8 @@ function Navbar({ price }) {
           <span>
             <LocalTaxiIcon style={{ fontSize: 30, padding: 4 }}></LocalTaxiIcon>
           </span>
-          <Link>
+
+          <Link to="products/:id" element={<SingleProductPage />}>
             <p>Cabs</p>
           </Link>
         </div>
@@ -109,7 +111,7 @@ function Navbar({ price }) {
               style={{ fontSize: 30, padding: 4 }}
             ></CreditCardIcon>
           </span>
-          <Link to="payment" element={<Payment />}>
+          <Link to="PaymentForm" element={<PaymentForm />}>
             <p>Payment:0</p>
           </Link>
         </div>
@@ -123,12 +125,10 @@ function Navbar({ price }) {
         </div>
         <div>
           <span>
-            <PersonIcon style={{ fontSize: 30, padding: 4 }}></PersonIcon>
+            {/* <CartIcon style={{ fontSize: 30, padding: 4 }}></CartIcon> */}
           </span>
-          <Link to="SignUp" element={<SignUp />}>
-            {" "}
-            {""}
-            <h4>Register</h4>
+          <Link to="ordersucccessfull" element={<OrderSuccessfull />}>
+            {/* <h4>Register</h4> */}
           </Link>
         </div>
       </Box>
