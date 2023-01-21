@@ -4,12 +4,11 @@ import Home from "../Pages/Home";
 import Car from "../Pages/Car";
 import Flight from "../Pages/Flight";
 import Login from "../Pages/Login";
-import Payment from "../Pages/Payment";
-
+import PaymentForm from "../Pages/PaymentForm";
 import Hotel from "../Pages/Hotel";
 import SignUp from "../Pages/SignUp";
-import PrivateRoute from "./PrivateRoute";
-
+import OrderSuccessfull from "../Pages/OrderSuccessfull";
+import SingleProductPage from "../Pages/SingleProductPage";
 const AllRoutes = () => {
   return (
     <div>
@@ -20,24 +19,14 @@ const AllRoutes = () => {
         <Route path="/bus" element={<Bus />} />
         <Route path="/car" element={<Car />} />
         <Route path="/flight" element={<Flight />} />
+        <Route path="/paymentForm" element={<PaymentForm />} />
+        <Route path="/ordersucccessfull" element={<OrderSuccessfull />} />
         <Route
-          path="/hotel"
-          element={
-           
-              <Hotel />
-           
-          }
-        />
+          path="/products/:id"element={<SingleProductPage />}/>
+
+        <Route path="/hotel" element={<Hotel />} />
 
         <Route path="/signup" element={<SignUp />} />
-        <Route
-          path="/payment"
-          element={
-            <PrivateRoute>
-              <Payment />
-            </PrivateRoute>
-          }
-        />
       </Routes>
     </div>
   );
