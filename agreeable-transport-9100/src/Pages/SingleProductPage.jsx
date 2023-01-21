@@ -45,7 +45,7 @@ const SingleProductPage = () => {
     setIsButLoading(true);
 
     setTimeout(() => {
-      alert("Added To Cart");
+      alert("Added To Favourite");
 
       setIsButLoading(false);
       handleCart(data[0]);
@@ -151,7 +151,7 @@ const SingleProductPage = () => {
             w="full"
             colorScheme="blue"
           >
-            {!isButLoading && bagbutton && "ADD TO BAG"}
+            {!isButLoading && bagbutton && "ADD TO FAV"}
             {!isButLoading && !bagbutton && "ADDED"}
             {isButLoading && (
               <Spinner
