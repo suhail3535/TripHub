@@ -20,6 +20,9 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import styles from "../Pages/main.module.css";
 import { Box } from "@chakra-ui/react";
+import Swal from "sweetalert2";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 
 function Navbar({ price }) {
   
@@ -32,8 +35,12 @@ const [active, setActive] = useState("");
 
 /// LOGOUT
 const LogOut_User = () => {
-  console.log("LOGOUT IS RUNNUNG");
-  alert("LogOut User Successfully");
+  
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "You are Logged Out!",
+    });
   logoutUser();
 };
 
@@ -168,7 +175,7 @@ const LogOut_User = () => {
                   style={{ fontSize: 30, padding: 4, border:"0px solid green", marginLeft:"15px", marginBottom:"5px"}}
                 ></AccountCircleIcon>
               </span>
-              
+
             </div>
             {!isAuth && (
             <NavLink

@@ -5,6 +5,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AppContext } from "../Component/AppContext";
 import Loading from "./Loading";
+import Swal from "sweetalert2";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const Login = () => {
   const { loginUser, isAuth } = useContext(AppContext);
@@ -20,21 +22,22 @@ const Login = () => {
     setLoading(true);
 
     setTimeout(() => {
+      
       prompt("ENTER OTP");
-      alert("REGISTERED SUCCESSFULLY");
-      alert("Redirecting To Hotel Page");
+       Swal.fire("Welcome!", "Registered successfully!","success");
+    
       setLoading(false);
       loginUser(Name);
       console.log(Name);
       navigate("/Hotel");
-    }, 1500);
+    }, 1000);
   };
 
   const [isPageLoading, setPageIsLoading] = useState(true);
 
   setTimeout(() => {
     setPageIsLoading(false);
-  }, 1500);
+  }, 1000);
 
   if (isPageLoading) {
     return <Loading />;

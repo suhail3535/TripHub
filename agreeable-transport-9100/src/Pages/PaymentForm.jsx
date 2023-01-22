@@ -14,6 +14,9 @@ import {
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AppContext } from "../Component/AppContext";
+import Swal from "sweetalert2";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 
 const PaymentForm = () => {
   const { price } = useContext(AppContext);
@@ -21,7 +24,7 @@ const PaymentForm = () => {
   const navigate = useNavigate();
 
   const PaymentDone = () => {
-    alert("Your Payment Has Successfull");
+ Swal.fire("Congratulations!", "Payment successfull!", "success");
     navigate("/ordersucccessfull");
   };
 
