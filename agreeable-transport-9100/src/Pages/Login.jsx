@@ -63,9 +63,7 @@ const Login = () => {
 
         <div className={styles.loginmain}>
           <h2 style={{ fontWeight: "bold" }}>Log in / Sign up</h2>
-          <p className={styles.loginP}>
-            for Latest trends, exciting offers and everything Bewakoof!
-          </p>
+        
           <input
             style={{
               width: "420px",
