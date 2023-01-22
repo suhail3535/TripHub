@@ -7,9 +7,10 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  border: 1px solid rgb(255, 247, 0);
+  border: 0px solid rgb(255, 247, 0);
   width: 40%;
   margin-left: 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 #searchBars > li {
   list-style-type: none;

@@ -2,9 +2,8 @@ import React from "react";
 import { useContext, useState } from "react";
 
 import Hotel from "../Pages/Hotel";
-import Login from "../Pages/Login";
 import SingleProductPage from "../Pages/SingleProductPage";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import OrderSuccessfull from "../Pages/OrderSuccessfull";
 import Cart from "../Pages/Cart";
 import { AppContext } from "./AppContext";
@@ -17,23 +16,16 @@ import TrainIcon from "@mui/icons-material/Train";
 import DirectionsBusFilledIcon from "@mui/icons-material/DirectionsBusFilled";
 import LocalTaxiIcon from "@mui/icons-material/LocalTaxi";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
-import PersonIcon from "@mui/icons-material/Person";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import styles from "../Pages/main.module.css";
 import { Box } from "@chakra-ui/react";
-import { FaUserAlt } from "react-icons/fa";
-import { VscHeart } from "react-icons/vsc";
-import { IoBagOutline } from "react-icons/io5";
-import { IoSearchOutline } from "react-icons/io5";
-import { Circle, Text } from "@chakra-ui/react";
 
 function Navbar({ price }) {
   
-const { userName, isAuth, logoutUser, cartData, TotalQty } =
+const { userName, isAuth, logoutUser,TotalQty } =
   useContext(AppContext);
 
 const [active, setActive] = useState("");
-const [info, setinfo] = useState(false);
 
 
 
@@ -81,7 +73,7 @@ const LogOut_User = () => {
             <FlightIcon style={{ fontSize: 30, padding: 4 }}></FlightIcon>
           </span>
           <Link>
-            <p style={{ fontSize: 14, fontWeight: "bold", color: "black" }}>
+            <p style={{ fontSize: 12, fontWeight: "bold", color: "black" }}>
               Flights
             </p>{" "}
           </Link>
@@ -91,7 +83,7 @@ const LogOut_User = () => {
             <HotelIcon style={{ fontSize: 30, padding: 4 }}></HotelIcon>
           </span>
           <Link to="Hotel" element={<Hotel />}>
-            <p style={{ fontSize: 14, fontWeight: "bold", color: "black" }}>
+            <p style={{ fontSize: 12, fontWeight: "bold", color: "black" }}>
               Hotels
             </p>
           </Link>
@@ -104,7 +96,7 @@ const LogOut_User = () => {
           </span>
 
           <Link>
-            <p style={{ fontSize: 14, fontWeight: "bold", color: "black" }}>
+            <p style={{ fontSize: 12, fontWeight: "bold", color: "black" }}>
               Hoiday packages
             </p>
           </Link>
@@ -114,7 +106,7 @@ const LogOut_User = () => {
             <TrainIcon style={{ fontSize: 30, padding: 4 }}></TrainIcon>
           </span>
           <Link>
-            <p style={{ fontSize: 14, fontWeight: "bold", color: "black" }}>
+            <p style={{ fontSize: 12, fontWeight: "bold", color: "black" }}>
               Trains
             </p>
           </Link>
@@ -125,7 +117,7 @@ const LogOut_User = () => {
           </span>
 
           <Link to="products/:id" element={<SingleProductPage />}>
-            <p style={{ fontSize: 14, fontWeight: "bold", color: "black" }}>
+            <p style={{ fontSize: 12, fontWeight: "bold", color: "black" }}>
               Cabs
             </p>
           </Link>
@@ -137,7 +129,7 @@ const LogOut_User = () => {
             ></CreditCardIcon>
           </span>
           <Link to="PaymentForm" element={<PaymentForm />}>
-            <p style={{ fontSize: 14, fontWeight: "bold", color: "black" }}>
+            <p style={{ fontSize: 12, fontWeight: "bold", color: "black"}}>
               Payment
             </p>
           </Link>
@@ -148,7 +140,7 @@ const LogOut_User = () => {
             <DirectionsBusFilledIcon style={{ fontSize: 30, padding: 4 }}></DirectionsBusFilledIcon>
           </span>
           <Link>
-            <p style={{ fontSize: 14, fontWeight: "bold", color: "black" }}>
+            <p style={{ fontSize: 12, fontWeight: "bold", color: "black" }}>
               Bus
             </p>
           </Link>
@@ -218,7 +210,7 @@ const LogOut_User = () => {
 
             <div style={{ border: "0px solid green" }}>
               <Link to="Cart" element={<Cart />}>
-                <p style={{ fontSize: 14, fontWeight: "bold", color: "black" }}>
+                <p style={{ fontSize: 12, fontWeight: "bold", color: "black" }}>
                   Favourite
                 </p>
                 {TotalQty !== 0 ? (

@@ -6,7 +6,6 @@ import Flight from "../Pages/Flight";
 import Login from "../Pages/Login";
 import PaymentForm from "../Pages/PaymentForm";
 import Hotel from "../Pages/Hotel";
-import SignUp from "../Pages/SignUp";
 import Cart from "../Pages/Cart";
 import CartSingleCard from "../Pages/CartSingleCard";
 import OrderSuccessfull from "../Pages/OrderSuccessfull";
@@ -37,7 +36,7 @@ const AllRoutes = () => {
           }
         />
 
-        <Route path="/signup" element={<SignUp />} />
+      
       </Routes>
     </div>
   );

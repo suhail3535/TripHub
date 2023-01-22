@@ -11,10 +11,10 @@ import {
   Stack,
   Divider,
 } from "@chakra-ui/react";
-import { AddIcon, ArrowRightIcon, CloseIcon } from "@chakra-ui/icons";
+import { AddIcon} from "@chakra-ui/icons";
 import { AiOutlineHeart } from "react-icons/ai";
 
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext  } from "react";
 import { AppContext } from "../Component/AppContext";
 
 const CartSingleCard = ({ el }) => {

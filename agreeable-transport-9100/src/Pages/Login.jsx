@@ -49,9 +49,7 @@ const Login = () => {
     <>
       <div className={styles.main}>
         <div className={styles.submain}>
-          <h1 style={{ fontWeight: "bold" }}>
-            Welcome to TripHub !
-          </h1>
+          <h1 style={{ fontWeight: "bold" }}>Welcome to TripHub !</h1>
           <div style={{ width: "80%", margin: "auto" }}>
             <img
               style={{ width: "100%" }}
@@ -63,14 +61,14 @@ const Login = () => {
 
         <div className={styles.loginmain}>
           <h2 style={{ fontWeight: "bold" }}>Log in / Sign up</h2>
-        
+
           <input
             style={{
               width: "420px",
               height: "30px",
               borderRadius: "5px",
               textAlign: "center",
-              fontSize: "20px",
+              fontSize: "15px",
               marginTop: "30px",
               border: "1px solid blue",
             }}
@@ -86,7 +84,7 @@ const Login = () => {
               height: "30px",
               borderRadius: "5px",
               textAlign: "center",
-              fontSize: "20px",
+              fontSize: "15px",
               color: "black",
               marginTop: "30px",
               border: "1px solid blue",
@@ -102,7 +100,7 @@ const Login = () => {
               backgroundColor: "green",
               border: "none",
               color: " white",
-              padding: "15px 32px",
+             
               textAlign: "center",
               textDecoration: "none",
               display: "inline-block",
@@ -110,7 +108,7 @@ const Login = () => {
               fontWeight: "600",
               borderRadius: "5px",
               width: "420px",
-              height: "50px",
+              height: "45px",
               textTransform: "uppercase",
               marginTop: "10px",
             }}
@@ -158,8 +156,12 @@ const Login = () => {
             onClick={handleClick}
           >
             <img
-              style={{ width: "20px", margin: "0 15px 0px 15px" }}
-              src="https://images.bewakoof.com/web/carbon-email-1620039620.png"
+              style={{
+                width: "20px",
+                margin: "0 15px 0px 15px",
+                border: "2px solid greeen",
+              }}
+              src="https://cdn-icons-png.flaticon.com/512/281/281764.png"
               alt=""
             />
             CONTINUE WITH EMAIL
@@ -186,14 +188,14 @@ const Login = () => {
               >
                 <img
                   style={{ width: "20px", margin: "0px 15px 0px 10px" }}
-                  src="https://images.bewakoof.com/web/group-3-2x-1558356035.png"
+                  src="https://cdn-icons-png.flaticon.com/512/281/281764.png"
                   alt=""
                 />
                 GOOGLE
               </button>
             </a>
 
-            <a href="https://www.facebook.com/login.php?skip_api_login=1&api_key=1548728332017744&kid_directed_site=0&app_id=1548728332017744&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fdialog%2Foauth%3Fclient_id%3D1548728332017744%26scope%3Dpublic_profile%252Cemail%252Cuser_birthday%252Cuser_gender%252Cuser_hometown%252Cuser_location%26response_type%3Dtoken%26redirect_uri%3Dhttps%253A%252F%252Fwww.bewakoof.com%252Flogin%252Ffacebook%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3Dba16d91c-1c50-4965-97e6-31128372d4c2%26tp%3Dunspecified&cancel_url=https%3A%2F%2Fwww.bewakoof.com%2Flogin%2Ffacebook%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%23_%3D_&display=page&locale=en_GB&pl_dbl=0">
+            <a href="https://cdn-icons-png.flaticon.com/512/281/281764.png">
               <button
                 style={{
                   backgroundColor: "white",
@@ -212,7 +214,6 @@ const Login = () => {
               >
                 <img
                   style={{ width: "20px", margin: "0px 15px 0px 10px" }}
-                  src="https://images.bewakoof.com/web/bi-facebook2x-1620886445.png"
                   alt=""
                 />
                 FACEBOOK
@@ -229,14 +230,14 @@ const Login = () => {
                 color: "gray",
               }}
             >
-              By creating an account or logging in, you agree with Bewakoof's
+              By creating an account or logging in, you agree with TripHub's
               <a
                 style={{
                   textDecoration: "none",
                   color: "#1CB4C0",
                   fontWeight: "800",
                 }}
-                href="https://www.bewakoof.com/terms-and-conditions"
+                href="https://cdn-icons-png.flaticon.com/512/281/281764.png"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -249,7 +250,7 @@ const Login = () => {
                   color: "#00AFAF",
                   fontWeight: "800",
                 }}
-                href="https://www.bewakoof.com/privacy-policy-and-disclaimer"
+                href="https://cdn-icons-png.flaticon.com/512/281/281764.png"
                 target="_blank"
                 rel="noreferrer"
               >
