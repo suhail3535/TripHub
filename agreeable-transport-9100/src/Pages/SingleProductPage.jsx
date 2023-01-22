@@ -19,6 +19,8 @@ import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { AppContext } from "../Component/AppContext";
 import Loading from "./Loading";
+import Swal from "sweetalert2";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { AiOutlineHeart } from "react-icons/ai";
 const SingleProductPage = () => {
   // is Loading   //
@@ -37,19 +39,20 @@ const SingleProductPage = () => {
 
   setTimeout(() => {
     setIsLoading(false);
-  }, 1500);
+  }, 1000);
 
   const handleClick = () => {
     setIsButLoading(true);
 
     setTimeout(() => {
-      alert("Added To Favourite Page");
+      // alert("Added To Favourite Page");
+      Swal.fire("", "Your Choice added!", "success");
 
       setIsButLoading(false);
       handleCart(data[0]);
       setbagbutton(false);
       console.log(data[0]);
-    }, 1500);
+    },1000);
   };
 
   

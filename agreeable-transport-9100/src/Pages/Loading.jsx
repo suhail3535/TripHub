@@ -8,7 +8,7 @@ const Loading = () => {
         <div className={styles.loadingCSS}>
           
           <h1 style={{ fontSize: "50px", marginTop: "200px", marginLeft:"500px"}}>
-           Loading......
+           loading......
           </h1>
         </div>
       </div>

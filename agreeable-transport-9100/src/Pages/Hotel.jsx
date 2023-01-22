@@ -30,12 +30,12 @@ const Hotel = () => {
 
   const [hotelData, setHotelData] = useState([]);
 
-  // is Loading   //
+  
   const [isLoading, setIsLoading] = useState(true);
 
   setTimeout(() => {
     setIsLoading(false);
-  }, 1500);
+  }, 1000);
 
   useEffect(() => {
     setHotelData(AllProductsData.menData);
