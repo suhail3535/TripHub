@@ -17,6 +17,7 @@ import DirectionsBusFilledIcon from "@mui/icons-material/DirectionsBusFilled";
 import LocalTaxiIcon from "@mui/icons-material/LocalTaxi";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
 import FavoriteIcon from "@mui/icons-material/Favorite";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import styles from "../Pages/main.module.css";
 import { Box } from "@chakra-ui/react";
 
@@ -129,15 +130,17 @@ const LogOut_User = () => {
             ></CreditCardIcon>
           </span>
           <Link to="PaymentForm" element={<PaymentForm />}>
-            <p style={{ fontSize: 12, fontWeight: "bold", color: "black"}}>
+            <p style={{ fontSize: 12, fontWeight: "bold", color: "black" }}>
               Payment
             </p>
           </Link>
         </div>
-       
+
         <div>
           <span>
-            <DirectionsBusFilledIcon style={{ fontSize: 30, padding: 4 }}></DirectionsBusFilledIcon>
+            <DirectionsBusFilledIcon
+              style={{ fontSize: 30, padding: 4 }}
+            ></DirectionsBusFilledIcon>
           </span>
           <Link>
             <p style={{ fontSize: 12, fontWeight: "bold", color: "black" }}>
@@ -146,7 +149,6 @@ const LogOut_User = () => {
           </Link>
         </div>
         {/* *****************navbar************** */}
-
 
         <div id={styles.searchBars}>
           <div>
@@ -159,8 +161,18 @@ const LogOut_User = () => {
             </div>
             <div id={styles.searchBarsData}></div>
           </div>
-          {!isAuth && (
+          <div style={{ border: "0px solid blue", marginLeft: "10px" }}>
+            <div>
+              <span>
+                <AccountCircleIcon
+                  style={{ fontSize: 30, padding: 4, border:"0px solid green", marginLeft:"15px", marginBottom:"5px"}}
+                ></AccountCircleIcon>
+              </span>
+              
+            </div>
+            {!isAuth && (
             <NavLink
+              style={{ fontWeight: "bold" }}
               id={styles.loginButton}
               to="/Login"
               onClick={() => setActive("")}
@@ -169,6 +181,12 @@ const LogOut_User = () => {
               Login
             </NavLink>
           )}
+          </div>
+
+
+
+          
+        
           {
             <div style={{ border: "0px solid yellow" }}>
               {isAuth && (
@@ -183,7 +201,9 @@ const LogOut_User = () => {
                     }}
                   >
                     <div>
-                      <p style={{ fontWeight: "bold" }}>{userName}</p>
+                      <p style={{ fontWeight: "bold", color: "blue" }}>
+                        {userName}
+                      </p>
                     </div>
 
                     <button
@@ -199,7 +219,7 @@ const LogOut_User = () => {
           }
 
           {/* *******************fav*********** */}
-          <div style={{ border: "0px solid blue", marginLeft:"10px" }}>
+          <div style={{ border: "0px solid blue", marginLeft: "10px" }}>
             <div>
               <span>
                 <FavoriteIcon
@@ -234,9 +254,6 @@ const LogOut_User = () => {
             </div>
           </div>
         </div>
-
-
-
 
         {/* ***************************** */}
         <div>
