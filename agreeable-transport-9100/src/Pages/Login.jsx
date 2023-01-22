@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AppContext } from "../Component/AppContext";
 import Loading from "./Loading";
- 
+
 const Login = () => {
   const { loginUser, isAuth } = useContext(AppContext);
 
@@ -16,30 +16,25 @@ const Login = () => {
 
   const navigate = useNavigate();
 
+  const handleClick = () => {
+    setLoading(true);
 
+    setTimeout(() => {
+      prompt("ENTER OTP");
+      alert("REGISTERED SUCCESSFULLY");
+      alert("Redirecting To Hotel Page");
+      setLoading(false);
+      loginUser(Name);
+      console.log(Name);
+      navigate("/Hotel");
+    }, 1500);
+  };
 
- const handleClick = () => {
-   setLoading(true);
-
-   setTimeout(() => {
-     prompt("ENTER OTP");
-     alert("REGISTERED SUCCESSFULLY");
-     alert("Redirecting To Home Page");
-     setLoading(false);
-     loginUser(Name);
-     console.log(Name);
-     navigate("/Hotel");
-   }, 2000);
- };
-
-  
   const [isPageLoading, setPageIsLoading] = useState(true);
 
   setTimeout(() => {
     setPageIsLoading(false);
   }, 1500);
-
-
 
   if (isPageLoading) {
     return <Loading />;
@@ -100,7 +95,7 @@ const Login = () => {
               backgroundColor: "green",
               border: "none",
               color: " white",
-             
+
               textAlign: "center",
               textDecoration: "none",
               display: "inline-block",
@@ -161,7 +156,7 @@ const Login = () => {
                 margin: "0 15px 0px 15px",
                 border: "2px solid greeen",
               }}
-              src="https://cdn-icons-png.flaticon.com/512/281/281764.png"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaAuJC3T4we7EMGLKHmlqoN960tceVmxPlfg&usqp=CAU"
               alt=""
             />
             CONTINUE WITH EMAIL
