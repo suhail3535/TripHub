@@ -25,10 +25,10 @@ import { useEffect } from "react";
 
 
 
-const MenProducts = () => {
+const Hotel = () => {
   const { data, AllProductsData } = useContext(AppContext);
 
-  const [mendata, setmenData] = useState([]);
+  const [hotelData, setHotelData] = useState([]);
 
   // is Loading   //
   const [isLoading, setIsLoading] = useState(true);
@@ -38,15 +38,15 @@ const MenProducts = () => {
   }, 1500);
 
   useEffect(() => {
-    setmenData(AllProductsData.menData);
-  }, [mendata]);
+    setHotelData(AllProductsData.menData);
+  }, [hotelData]);
 
   const PriceSortlow = () => {
     const SortedData = AllProductsData.menData.sort(function (a, b) {
       return a.price - b.price;
     });
 
-    setmenData([...SortedData]);
+    setHotelData([...SortedData]);
   };
 
   const PriceSorthigh = () => {
@@ -54,17 +54,17 @@ const MenProducts = () => {
       return b.price - a.price;
     });
 
-    setmenData([...SortedData]);
+    setHotelData([...SortedData]);
   };
 
-  console.log(mendata);
+  console.log(hotelData);
 
   if (isLoading) {
     return <Loading />;
   }
 
   return (
-    <Stack style={{ marginTop: "80px" }}>
+    <Stack style={{ marginTop: "10px" }}>
       <Text align="center" fontSize="20" fontWeight="bold">
         Welcome To TripHub.com !
       </Text>
@@ -73,13 +73,13 @@ const MenProducts = () => {
         style={{
           border: "0px solid red",
           margin: "auto",
-          marginTop: "20px",
+          marginTop: "5px",
           boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
         }}
       >
         <Divider orientation="horizontal" />
 
-        <VStack style={{border:"1px solid blue"}}>
+        <VStack style={{ border: "0px solid blue" }}>
           <Text align="center" fontSize="20" fontWeight="bold">
             Hotels
           </Text>
@@ -103,14 +103,27 @@ const MenProducts = () => {
               icon={<ChevronUpIcon boxSize={8} />}
             />
           </ButtonGroup>
-        
-          
         </VStack>
 
         <HStack spacing={50} width="1200px" justify="stretch">
           <SimpleGrid spacing={5} columns={[1, 2, 2, 3]}>
-            {mendata.map((el) => (
-              <HotelCard {...el} />
+            {hotelData.map((el) => (
+              <div
+                style={{
+                  border: "0px solid green",
+                  textAlign: "center",
+                  boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
+                  borderRadius: "5px",
+                }}
+              >
+                <HotelCard {...el} />
+                <Button
+                  style={{ marginBottom: "10px" }}
+                  colorScheme="messenger"
+                >
+                  BOOK NOW
+                </Button>
+              </div>
             ))}
           </SimpleGrid>
         </HStack>
@@ -121,4 +134,4 @@ const MenProducts = () => {
   );
 };
 
-export default MenProducts;
+export default Hotel;

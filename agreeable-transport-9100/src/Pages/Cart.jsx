@@ -24,13 +24,13 @@ import CartSingleCard from "./CartSingleCard";
 import Loading from "./Loading";
 
 const Cart = () => {
-  //   https://cdn.dribbble.com/users/887568/screenshots/3172047/ufo.gif
+ 
 
-  // is Loading   //
+
   const { cartData, price, discountPrice, Totalprice, TotalQty } =
     useContext(AppContext);
 
-  // is Loading   //
+
   const [isLoading, setIsLoading] = useState(true);
   const [isButLoading, setIsButLoading] = useState(false);
   const navigate = useNavigate();
@@ -52,7 +52,7 @@ const Cart = () => {
     }, 1500);
   };
 
-  // console.log(price)
+
 
   if (isLoading) {
     return <Loading />;
@@ -72,10 +72,10 @@ const Cart = () => {
               onClick={() => BackToPRoductPage()}
               fontSize="x-large"
               padding={8}
-              colorScheme="yellow"
+              colorScheme="blue"
             >
               <BiShoppingBag fontSize="30px" />
-              {!isButLoading && "Continue Shopping"}
+              {!isButLoading && "Please Continue Booking"}
               {isButLoading && (
                 <Spinner
                   thickness="4px"
@@ -93,19 +93,18 @@ const Cart = () => {
   }
 
   return (
+
+    // maindiv
     <VStack marginTop="10px" justify="center" border="0px solid green">
       <Text fontSize="2xl" fontWeight="extrabold">
-        My Bag {TotalQty} item(S)
+        My Favourite has {TotalQty} item(s)
       </Text>
 
-      <Wrap padding={10} spacing={50}>
+      <Wrap padding={10} border="0px solid pink" spacing={50}>
         <VStack spacing={5}>
           <HStack spacing={5} w="full" padding={3} bg="#fcffee">
-            {" "}
-            <Image
-              w={10}
            
-            />{" "}
+          
           
           </HStack>
           {cartData.map((el) => (
@@ -113,12 +112,12 @@ const Cart = () => {
           ))}
         </VStack>
 
-        <VStack spacing={5}>
+        <VStack spacing={5} style={{}}>
           <HStack spacing={5} w="full" padding={3} bg="yellow.300">
          
             <Text fontWeight="bold">
               Save extra ₹140 with TriBe
-            </Text> <Spacer /> <ArrowRightIcon />{" "}
+            </Text> <Spacer /> <ArrowRightIcon /> 
           </HStack>
 
           <Box
@@ -126,6 +125,7 @@ const Cart = () => {
             w={600}
             spacing={3}
             borderWidth="1px"
+           
             borderRadius="lg"
             overflow="hidden"
             padding="5"
@@ -178,6 +178,7 @@ const Cart = () => {
           <VStack
             fontSize="16px"
             padding="5"
+           
             w={600}
             spacing={5}
             borderWidth="1px"
@@ -192,20 +193,13 @@ const Cart = () => {
               </Text>
             </HStack>
 
-            <HStack w="full">
-              <Text fontSize="18px">Shipping Charges </Text>
-              <Spacer />
-              <Text fontWeight="bold" color="green.500" fontSize="18px">
-             
-                FREE
-              </Text>
-            </HStack>
+           
 
             <HStack w="full">
               <Text fontSize="18px">Bag Discount </Text>
               <Spacer />
               <Text fontWeight="bold" fontSize="18px">
-                {" "}
+              
                 - ₹{discountPrice}{" "}
               </Text>
             </HStack>
@@ -214,8 +208,8 @@ const Cart = () => {
               <Text fontSize="18px">Subtotal </Text>
               <Spacer />
               <Text fontWeight="bold" fontSize="18px">
-                {" "}
-                ₹{price}{" "}
+            
+                ₹{price}
               </Text>
             </HStack>
 
@@ -242,7 +236,7 @@ const Cart = () => {
             <Button
               onClick={() => navigate("/PaymentForm")}
               w="full"
-              colorScheme="teal"
+              colorScheme="blue"
               color="white"
               size="lg"
             >
@@ -250,9 +244,7 @@ const Cart = () => {
             </Button>
           </HStack>
 
-          <Divider as="bold" />
-          <Divider as="bold" />
-          <Divider as="bold" />
+         
         </VStack>
       </Wrap>
     </VStack>

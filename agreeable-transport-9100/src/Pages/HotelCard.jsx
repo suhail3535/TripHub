@@ -2,12 +2,12 @@ import { Badge, Flex, Image, Text, VStack } from "@chakra-ui/react";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-//  <HoverImage src={yourFile} hoverSrc={yourFileHover} />
+
 
 const HotelCard = ({ title, avatar, categary,price,Ratting,id}) => {
   const navigate = useNavigate();
 
-  // to navigate to More Product Details
+
   const VisitSingleProduct = () => {
     navigate(`/products/${id}`);
   };
@@ -18,28 +18,27 @@ const HotelCard = ({ title, avatar, categary,price,Ratting,id}) => {
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
+        border: "0px solid red",
+        textAlign: "center",
       }}
     >
-      < img onClick={VisitSingleProduct} src={avatar} alt={title} />
+      <img onClick={VisitSingleProduct} style={{border:"0px solid red",borderRadius:"20px",padding:"10px"}}  src={avatar} alt={title} />
 
-      <VStack align="revert-layer">
-      
-        <Text fontSize="15" color="gray.500">
+      <div style={{ border: "0px solid blue", padding: "10px"}}>
+        <Text fontWeight="bold" color="gray" >
           {title}
         </Text>
-        <Flex>
-          <Text fontWeight="bold" fontSize="2xl">
-            ₹{price}
-          </Text>
 
-          <Text as="s" marginLeft={4}>
-            {categary}
-          </Text>
-          <Text as="s" marginLeft={4}>
-            {Ratting}
-          </Text>
-        </Flex>
-      </VStack>
+        <Text fontWeight="bold" fontSize="16">
+          Price:₹{price}
+        </Text>
+        <Text fontWeight="bold" color="gray" fontSize="12" marginLeft={4}>
+          Ratting: {Ratting}
+        </Text>
+        <Text fontWeight="bold" color="gray" fontSize="10" marginLeft={4}>
+          Categary:{categary}
+        </Text>
+      </div>
     </div>
   );
 };

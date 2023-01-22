@@ -1,15 +1,17 @@
 import React from "react";
+import { useContext, useState } from "react";
+
 import Hotel from "../Pages/Hotel";
 import Login from "../Pages/Login";
 import SingleProductPage from "../Pages/SingleProductPage";
+import { NavLink, useNavigate } from "react-router-dom";
 import OrderSuccessfull from "../Pages/OrderSuccessfull";
 import Cart from "../Pages/Cart";
-
+import { AppContext } from "./AppContext";
 import PaymentForm from "../Pages/PaymentForm";
 import { Link } from "react-router-dom";
 import FlightIcon from "@mui/icons-material/Flight";
 import HotelIcon from "@mui/icons-material/Hotel";
-import HomeWorkIcon from "@mui/icons-material/HomeWork";
 import HolidayVillageIcon from "@mui/icons-material/HolidayVillage";
 import TrainIcon from "@mui/icons-material/Train";
 import DirectionsBusFilledIcon from "@mui/icons-material/DirectionsBusFilled";
@@ -17,20 +19,50 @@ import LocalTaxiIcon from "@mui/icons-material/LocalTaxi";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
 import PersonIcon from "@mui/icons-material/Person";
 import FavoriteIcon from "@mui/icons-material/Favorite";
+import styles from "../Pages/main.module.css";
 import { Box } from "@chakra-ui/react";
+import { FaUserAlt } from "react-icons/fa";
+import { VscHeart } from "react-icons/vsc";
+import { IoBagOutline } from "react-icons/io5";
+import { IoSearchOutline } from "react-icons/io5";
+import { Circle, Text } from "@chakra-ui/react";
 
 function Navbar({ price }) {
+  
+const { userName, isAuth, logoutUser, cartData, TotalQty } =
+  useContext(AppContext);
+
+const [active, setActive] = useState("");
+const [info, setinfo] = useState(false);
+
+
+
+/// LOGOUT
+const LogOut_User = () => {
+  console.log("LOGOUT IS RUNNUNG");
+  alert("LogOut User Successfully");
+  logoutUser();
+};
+
+
+
+
+  
   return (
     <>
       <Box
         class="main_box"
         style={{
-          border: "px solid red",
-          height: "100px",
+          border: "0px solid red",
+          // height: "100px",
+
           display: "flex",
-          justifyContent: "space-evenly",
+          justifyContent: "space-between",
           padding: "10px",
           boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
+
+          width: " 100%",
+          marginTop: "10px",
         }}
       >
         <div className="imgdiv">
@@ -44,25 +76,26 @@ function Navbar({ price }) {
             />
           </Link>
         </div>
-
         <div>
           <span>
             <FlightIcon style={{ fontSize: 30, padding: 4 }}></FlightIcon>
           </span>
           <Link>
-            <p>Flights</p>{" "}
+            <p style={{ fontSize: 14, fontWeight: "bold", color: "black" }}>
+              Flights
+            </p>{" "}
           </Link>
         </div>
-
         <div>
           <span>
             <HotelIcon style={{ fontSize: 30, padding: 4 }}></HotelIcon>
           </span>
           <Link to="Hotel" element={<Hotel />}>
-            <p>Hotels</p>
+            <p style={{ fontSize: 14, fontWeight: "bold", color: "black" }}>
+              Hotels
+            </p>
           </Link>
         </div>
-
         <div>
           <span>
             <HolidayVillageIcon
@@ -71,7 +104,9 @@ function Navbar({ price }) {
           </span>
 
           <Link>
-            <p>Hoiday packages</p>
+            <p style={{ fontSize: 14, fontWeight: "bold", color: "black" }}>
+              Hoiday packages
+            </p>
           </Link>
         </div>
         <div>
@@ -79,17 +114,9 @@ function Navbar({ price }) {
             <TrainIcon style={{ fontSize: 30, padding: 4 }}></TrainIcon>
           </span>
           <Link>
-            <p>Trains</p>
-          </Link>
-        </div>
-        <div>
-          <span>
-            <DirectionsBusFilledIcon
-              style={{ fontSize: 30, padding: 4 }}
-            ></DirectionsBusFilledIcon>
-          </span>
-          <Link>
-            <p>Buses</p>
+            <p style={{ fontSize: 14, fontWeight: "bold", color: "black" }}>
+              Trains
+            </p>
           </Link>
         </div>
         <div>
@@ -98,7 +125,9 @@ function Navbar({ price }) {
           </span>
 
           <Link to="products/:id" element={<SingleProductPage />}>
-            <p>Cabs</p>
+            <p style={{ fontSize: 14, fontWeight: "bold", color: "black" }}>
+              Cabs
+            </p>
           </Link>
         </div>
         <div>
@@ -108,32 +137,119 @@ function Navbar({ price }) {
             ></CreditCardIcon>
           </span>
           <Link to="PaymentForm" element={<PaymentForm />}>
-            <p>Payment</p>
+            <p style={{ fontSize: 14, fontWeight: "bold", color: "black" }}>
+              Payment
+            </p>
           </Link>
         </div>
+       
         <div>
           <span>
-            <FavoriteIcon style={{ fontSize: 30, padding: 4 }}></FavoriteIcon>
+            <DirectionsBusFilledIcon style={{ fontSize: 30, padding: 4 }}></DirectionsBusFilledIcon>
           </span>
-          <Link to="Cart" element={<Cart />}>
-            <p>Favourite</p>
+          <Link>
+            <p style={{ fontSize: 14, fontWeight: "bold", color: "black" }}>
+              Bus
+            </p>
           </Link>
         </div>
-        <div>
-          <span>
-            <PersonIcon style={{ fontSize: 30, padding: 4 }}></PersonIcon>
-          </span>
-          <Link to="Login" element={<Login />}>
-            <h4>Login User</h4>
-          </Link>
+        {/* *****************navbar************** */}
+
+
+        <div id={styles.searchBars}>
+          <div>
+            <div className={styles.iconInput}>
+              <input
+                type="text"
+                id={styles.inpSrch}
+                placeholder="search by product,category or collection"
+              ></input>
+            </div>
+            <div id={styles.searchBarsData}></div>
+          </div>
+          {!isAuth && (
+            <NavLink
+              id={styles.loginButton}
+              to="/Login"
+              onClick={() => setActive("")}
+              className={styles.LogoutHOver}
+            >
+              Login
+            </NavLink>
+          )}
+          {
+            <div style={{ border: "0px solid yellow" }}>
+              {isAuth && (
+                <div style={{ textAlign: "center", border: "0px solid pink" }}>
+                  <div
+                    style={{
+                      display: "flex",
+                      gap: "10px",
+                      alignItems: "center",
+                      textAlign: "center",
+                      border: "0px solid green",
+                    }}
+                  >
+                    <div>
+                      <p style={{ fontWeight: "bold" }}>{userName}</p>
+                    </div>
+
+                    <button
+                      onClick={LogOut_User}
+                      className={styles.LogoutHOver}
+                    >
+                      Logout
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
+          }
+
+          {/* *******************fav*********** */}
+          <div style={{ border: "0px solid blue", marginLeft:"10px" }}>
+            <div>
+              <span>
+                <FavoriteIcon
+                  style={{ fontSize: 30, padding: 4 }}
+                ></FavoriteIcon>
+              </span>
+            </div>
+
+            <div style={{ border: "0px solid green" }}>
+              <Link to="Cart" element={<Cart />}>
+                <p style={{ fontSize: 14, fontWeight: "bold", color: "black" }}>
+                  Favourite
+                </p>
+                {TotalQty !== 0 ? (
+                  <p
+                    style={{
+                      border: "1px solid white",
+                      borderRadius: "50px",
+                      width: "40px",
+                      textAlign: "center",
+                      backgroundColor: "#b2f5ea",
+                      color: "black",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    {TotalQty}
+                  </p>
+                ) : (
+                  ""
+                )}
+              </Link>
+            </div>
+          </div>
         </div>
+
+
+
+
+        {/* ***************************** */}
         <div>
-          <span>
-            {/* <CartIcon style={{ fontSize: 30, padding: 4 }}></CartIcon> */}
-          </span>
-          <Link to="ordersucccessfull" element={<OrderSuccessfull />}>
-            {/* <h4>Register</h4> */}
-          </Link>
+          <span></span>
+          <Link to="ordersucccessfull" element={<OrderSuccessfull />}></Link>
         </div>
       </Box>
     </>

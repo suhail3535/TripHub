@@ -35,7 +35,6 @@ const SingleProductPage = () => {
 
     
   const { CartDataToMatch, cartData, handleCart } = useContext(AppContext);
-  //  console.log("line27",CartDataToMatch)
 
   setTimeout(() => {
     setIsLoading(false);
@@ -45,7 +44,7 @@ const SingleProductPage = () => {
     setIsButLoading(true);
 
     setTimeout(() => {
-      alert("Added To Favourite");
+      alert("Added To Favourite Page");
 
       setIsButLoading(false);
       handleCart(data[0]);
@@ -54,12 +53,9 @@ const SingleProductPage = () => {
     }, 1500);
   };
 
-  // id is a string so we need to convert it to number
+  
   const { id } = useParams();
-  /// console.log(typeof(id))
-
-  // console.log(cartData)
-
+ 
   useEffect(() => {
     let obj = CartDataToMatch.filter((el) => {
       if (el.id === Number(id)) {
@@ -82,9 +78,10 @@ const SingleProductPage = () => {
       spacing={30}
       justify="center"
       style={{
-        marginTop: "10px",
-        marginBottom: "50px",
-        border: "0px solid blue",
+        border: "0px solid yellow",
+        width: "70%",
+        margin: "20px auto",
+      boxShadow:"rgba(0, 0, 0, 0.24) 0px 3px 8px"
   
       }}
     >
@@ -92,7 +89,7 @@ const SingleProductPage = () => {
         <Image borderRadius={15} src={DefaultImg} w="350px" />
       </HStack>
 
-      <VStack width={550} align="revert-layer" spacing={5}>
+      <VStack border="0px solid green" width={550} align="revert-layer" spacing={5}>
         <Text
           fontSize="30"
           fontWeight="bold"
@@ -136,13 +133,13 @@ const SingleProductPage = () => {
           more
         </Text>
 
-        <Divider />
+       
 
         <Divider />
 
         <HStack
           w="full"
-          style={{ border: "0px solid green", margin: "0px 0px 20px 0px" }}
+          style={{ border: "0px solid green", margin: "15px 0px 20px 0px" }}
         >
           <Button
             onClick={() => handleClick()}

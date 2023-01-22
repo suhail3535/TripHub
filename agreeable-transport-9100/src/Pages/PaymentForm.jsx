@@ -23,7 +23,7 @@ const PaymentForm = () => {
 
   const PaymentDone = () => {
   
-    alert("Payment Successfull");
+    alert("Your Payment Has Successfull");
     navigate("/ordersucccessfull");
    
   };
@@ -33,8 +33,10 @@ const PaymentForm = () => {
       <VStack
         spacing={5}
         width="1200px"
-        border="0px solid green"
-      
+        
+        border="0px solid gray"
+        backgroundColor="lightgoldenrodyellow"
+         boxShadow="rgba(0, 0, 0, 0.24) 0px 3px 8px"
         margin="auto"
         style={{ marginTop: "30px" }}
         marginBottom="50px"
@@ -43,13 +45,14 @@ const PaymentForm = () => {
           Choose your payment method
         </Text>
 
-        <HStack spacing={5}>
+        <HStack spacing={5} style={{ border: "0px solid green" }}>
           <VStack
-            marginTop="-240px"
-            width={300}
+            marginTop="-200px"
+            width={500}
             align="flex-start"
             padding={5}
             bg="#eeeeee"
+            border="0px solid blue"
           >
             <HStack>
               <Image
@@ -99,32 +102,41 @@ const PaymentForm = () => {
             <Divider />
           </VStack>
 
-          <VStack align="flex-start" spacing={5} padding={5}>
+          <VStack
+            align="flex-start"
+            border={"0px solid green"}
+            spacing={5}
+            padding={5}
+          >
             <VStack>
               <HStack>
                 <FormControl>
                   <FormLabel>First Name</FormLabel>
-                  <Input size="sm" />
+                  <Input style={{ border: "1px solid gray" }} size="sm" />
                 </FormControl>
                 <FormControl>
                   <FormLabel>Last Name</FormLabel>
-                  <Input size="sm" />
+                  <Input style={{ border: "1px solid gray" }} size="sm" />
                 </FormControl>
               </HStack>
 
               <FormControl>
                 <FormLabel>Address</FormLabel>
-                <Input size="sm" />
+                <Input style={{ border: "1px solid gray" }} size="sm" />
               </FormControl>
 
               <HStack>
                 <FormControl>
                   <FormLabel>City</FormLabel>
-                  <Input size="sm" />
+                  <Input style={{ border: "1px solid gray" }} size="sm" />
                 </FormControl>
                 <FormControl>
                   <FormLabel>State</FormLabel>
-                  <Input type="city" size="sm" />
+                  <Input
+                    style={{ border: "1px solid gray" }}
+                    type="city"
+                    size="sm"
+                  />
                 </FormControl>
               </HStack>
             </VStack>
@@ -135,16 +147,20 @@ const PaymentForm = () => {
               <HStack width="full">
                 <FormControl>
                   <FormLabel>Card Number</FormLabel>
-                  <Input w={280} size="sm" />
+                  <Input
+                    style={{ border: "1px solid gray" }}
+                    w={280}
+                    size="sm"
+                  />
                 </FormControl>
 
                 <FormControl>
                   <FormLabel>CVV</FormLabel>
                   <HStack width="full">
                     <PinInput size="sm">
-                      <PinInputField />
-                      <PinInputField />
-                      <PinInputField />
+                      <PinInputField style={{ border: "1px solid gray" }} />
+                      <PinInputField style={{ border: "1px solid gray" }} />
+                      <PinInputField style={{ border: "1px solid gray" }} />
                     </PinInput>
                   </HStack>
                 </FormControl>
@@ -153,11 +169,11 @@ const PaymentForm = () => {
               <HStack>
                 <FormControl>
                   <FormLabel>Exp MOnth</FormLabel>
-                  <Input size="sm" />
+                  <Input style={{ border: "1px solid gray" }} size="sm" />
                 </FormControl>
                 <FormControl>
                   <FormLabel>Exp Year</FormLabel>
-                  <Input size="sm" />
+                  <Input style={{ border: "1px solid gray" }} size="sm" />
                 </FormControl>
               </HStack>
 
@@ -167,7 +183,7 @@ const PaymentForm = () => {
                 fontSize="x"
                 padding={3}
                 w="full"
-                colorScheme="yellow"
+                colorScheme="cyan"
               >
                 PAY ₹{price}
               </Button>

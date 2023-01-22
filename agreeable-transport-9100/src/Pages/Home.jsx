@@ -130,6 +130,9 @@ const Home = () => {
         </Button>
       </div>
       <SmallBottom />
+
+
+      
       <div className={mystyle.myslider}>
    
         <Slider start={data.banner.start} />
