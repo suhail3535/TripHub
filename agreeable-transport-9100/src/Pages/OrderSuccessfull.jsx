@@ -6,16 +6,16 @@ const OrderSuccessfull = () => {
   const navigate = useNavigate();
 
   return (
-    <div>
+    <div style={{ backgroundColor: "lightyellow" }}>
       <VStack
         margin="auto"
         style={{
-          border: "1px solid gray",
+          border: "0px solid gray",
           width: "40%",
-          margin: " auto",
-          marginTop:"10PX",
+          margin: " 20px auto",
+          marginTop: "10PX",
           marginBottom: "100px",
-        
+          boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
         }}
       >
         <div>

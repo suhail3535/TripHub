@@ -22,17 +22,21 @@ const CartSingleCard = ({ el }) => {
 
   return (
     <Wrap
-      w={600}
+      w={700}
       spacing={3}
       borderWidth="1px"
       borderRadius="lg"
       overflow="hidden"
       padding="5"
+      border="0px solid gray"
+      boxShadow="rgba(0, 0, 0, 0.24) 0px 3px 8px"
     >
-      <HStack w="full">
+      <HStack border="0px solid yellow" w="full">
         <img
           style={{
-            border: "1px solid green",
+            border: "0px solid green",
+            borderRadius: "5px",
+            padding: "10",
             width: "35%",
             marginLeft: "30px",
           }}
@@ -40,27 +44,18 @@ const CartSingleCard = ({ el }) => {
           alt=""
         />
         <VStack align="revert-layer" spacing={4}>
-          <Text fontSize="xl" color="gray.500">
+          <Text fontSize="15" fontWeight="bold" color="gray.500">
             {el.title}
           </Text>
 
-          <Badge
-            fontSize="10x"
-            variant="outline"
-            width="fit-content"
-            colorScheme="teal"
-          >
-            {"4.4  ⭐"}
+          <Badge fontSize="10x" colorScheme="teal">
+            Ratting {"4.4  ⭐"}
           </Badge>
 
           <Stack>
             <HStack alignContent="center">
               <Text fontWeight="bold" fontSize="2xl">
                 ₹{el.price}
-              </Text>
-
-              <Text as="s" marginLeft={4} fontSize="l">
-                ₹{el.categary}
               </Text>
             </HStack>
 
@@ -71,8 +66,7 @@ const CartSingleCard = ({ el }) => {
                 variant="subtle"
                 colorScheme="teal"
               >
-                {" "}
-                inclusive of all taxes{" "}
+                inclusive of all taxes
               </Badge>
 
               <ButtonGroup size="sm" isAttached variant="outline">
@@ -110,11 +104,18 @@ const CartSingleCard = ({ el }) => {
           size="md"
           isAttached
           variant="outline"
+          backgroundColor="cyan.100"
         >
           REMOVE
         </Button>
         <Divider orientation="vertical" />
-        <Button w="full" size="md" isAttached variant="outline">
+        <Button
+          w="full"
+          size="md"
+          isAttached
+          variant="outline"
+          backgroundColor="cyan.100"
+        >
           <HStack spac>
             <AiOutlineHeart fontSize="25px" /> <Text>ADD TO WISHLIST</Text>
           </HStack>

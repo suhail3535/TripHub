@@ -1,0 +1,40 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+#searchBars {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border: 1px solid rgb(255, 247, 0);
+  width: 40%;
+  margin-left: 20px;
+}
+#searchBars > li {
+  list-style-type: none;
+  color: #333;
+  margin: 10px;
+  align-items: center;
+}
+
+.iconInput > input {
+  width: 320px;
+
+  background-color: rgb(238, 238, 238);
+  border-radius: 5px;
+  font-size: 12px;
+  padding: 10px;
+  outline: none;
+  border: none;
+}
+
+.LogoutHOver {
+  background-color: #fdd835;
+  border-radius: 5px;
+  padding: 2px 10px;
+}
+
+.LogoutHOver:hover {
+  background-color: yellowgreen;
+}

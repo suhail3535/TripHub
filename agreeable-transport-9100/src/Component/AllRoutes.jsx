@@ -11,6 +11,7 @@ import Cart from "../Pages/Cart";
 import CartSingleCard from "../Pages/CartSingleCard";
 import OrderSuccessfull from "../Pages/OrderSuccessfull";
 import SingleProductPage from "../Pages/SingleProductPage";
+import PrivateRoute from "./PrivateRoute";
 const AllRoutes = () => {
   return (
     <div>
@@ -27,7 +28,14 @@ const AllRoutes = () => {
         <Route path="/ordersucccessfull" element={<OrderSuccessfull />} />
         <Route path="/products/:id" element={<SingleProductPage />} />
 
-        <Route path="/hotel" element={<Hotel />} />
+        <Route
+          path="/hotel"
+          element={
+            <PrivateRoute>
+              <Hotel />
+            </PrivateRoute>
+          }
+        />
 
         <Route path="/signup" element={<SignUp />} />
       </Routes>

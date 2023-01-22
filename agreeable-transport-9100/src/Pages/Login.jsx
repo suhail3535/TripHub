@@ -16,32 +16,30 @@ const Login = () => {
 
   const navigate = useNavigate();
 
-  // console.log(Name,Number)
 
-  // console.log(isAuth);
 
-  const handleClick = () => {
-    setLoading(true);
+ const handleClick = () => {
+   setLoading(true);
 
-    setTimeout(() => {
-      prompt("ENTER OTP");
-      alert("REGISTERED SUCCESSFULLY");
-     
-      setLoading(false);
-      // loginUser(Name);
-      console.log(Name);
-      navigate("/");
-    }, 2000);
-  };
+   setTimeout(() => {
+     prompt("ENTER OTP");
+     alert("REGISTERED SUCCESSFULLY");
+     alert("Redirecting To Home Page");
+     setLoading(false);
+     loginUser(Name);
+     console.log(Name);
+     navigate("/Hotel");
+   }, 2000);
+ };
 
-  // is Loading   //
+  
   const [isPageLoading, setPageIsLoading] = useState(true);
 
   setTimeout(() => {
     setPageIsLoading(false);
   }, 1500);
 
-  // console.log(data)
+
 
   if (isPageLoading) {
     return <Loading />;
@@ -71,7 +69,7 @@ const Login = () => {
           <input
             style={{
               width: "420px",
-              height: "60px",
+              height: "30px",
               borderRadius: "5px",
               textAlign: "center",
               fontSize: "20px",
@@ -87,10 +85,11 @@ const Login = () => {
           <input
             style={{
               width: "420px",
-              height: "60px",
+              height: "30px",
               borderRadius: "5px",
               textAlign: "center",
               fontSize: "20px",
+              color: "black",
               marginTop: "30px",
               border: "1px solid blue",
             }}
@@ -102,7 +101,7 @@ const Login = () => {
           />
           <button
             style={{
-              backgroundColor: "blue",
+              backgroundColor: "green",
               border: "none",
               color: " white",
               padding: "15px 32px",
