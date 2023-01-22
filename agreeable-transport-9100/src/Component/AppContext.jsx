@@ -4,9 +4,6 @@ import { createContext } from "react";
 // 1
 export const AppContext = createContext();
 
-
-
-
 const AllProductsData = {
   menData: [
     {
@@ -22,8 +19,6 @@ const AllProductsData = {
       amount: 1,
       moreImage: [
         "https://cf.bstatic.com/xdata/images/hotel/square600/322334158.webp?k=b8ce5ccf108773e0a5511e879ae738149440d1ff85fa8c8b7e07c5bb0470f270&o=&s=1",
-        "https://images.bewakoof.com/t1080/women-s-red-ethnic-motif-printed-peplum-top-512009-1655800744-1.JPG",
-        "https://images.bewakoof.com/t1080/women-s-red-ethnic-motif-printed-peplum-top-512009-1655800770-6.JPG",
       ],
     },
 
@@ -41,8 +36,6 @@ const AllProductsData = {
       amount: 1,
       moreImage: [
         "https://cf.bstatic.com/xdata/images/hotel/square600/399492450.webp?k=947261176ed14d5ab8c6e5dfce20757dce772d5ec5c2c2aa51636f7c3d3b4108&o=&s=1",
-        "https://images.bewakoof.com/t1080/women-s-red-ethnic-motif-printed-peplum-top-512009-1655800744-1.JPG",
-        "https://images.bewakoof.com/t1080/women-s-red-ethnic-motif-printed-peplum-top-512009-1655800770-6.JPG",
       ],
     },
 
@@ -59,8 +52,6 @@ const AllProductsData = {
       amount: 1,
       moreImage: [
         "https://cf.bstatic.com/xdata/images/hotel/square600/292947302.webp?k=c1a6abd3ba458633983c99fdfec65f4315ff120da63a94a2a82559732a5ee5b7&o=&s=1",
-        "https://images.bewakoof.com/t1080/women-s-red-ethnic-motif-printed-peplum-top-512009-1655800744-1.JPG",
-        "https://images.bewakoof.com/t1080/women-s-red-ethnic-motif-printed-peplum-top-512009-1655800770-6.JPG",
       ],
     },
 
@@ -301,7 +292,6 @@ const CartDataToMatch = [
   },
 ];
 
-
 const AppContextProvider = ({ children }) => {
   const [isAuth, setIsAuth] = useState(false);
   const [userName, setUserName] = useState(null);
@@ -369,7 +359,6 @@ const AppContextProvider = ({ children }) => {
     setIsAuth(true);
     console.log("LOGIN USER RUNNING APP CONTEXT");
     setUserName(Name);
-    // console.log(Name)
   };
 
   const logoutUser = () => {
@@ -378,13 +367,10 @@ const AppContextProvider = ({ children }) => {
     console.log(isAuth, userName);
   };
 
-  // console.log(userName)
-
   return (
     <div>
       <AppContext.Provider
         value={{
-          
           userName,
           isAuth,
           toggle,
@@ -412,4 +398,3 @@ const AppContextProvider = ({ children }) => {
 
 export default AppContextProvider;
 
-// export default AppContextProvider;

@@ -1,14 +1,13 @@
-import { AddIcon, ArrowRightIcon, CloseIcon } from "@chakra-ui/icons";
+import { ArrowRightIcon,} from "@chakra-ui/icons";
 import {
   Badge,
   Box,
   Button,
-  ButtonGroup,
+
   Divider,
-  Flex,
+
   HStack,
-  IconButton,
-  Image,
+
   Spacer,
   Spinner,
   Stack,

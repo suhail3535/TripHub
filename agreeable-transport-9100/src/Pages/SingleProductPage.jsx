@@ -1,15 +1,14 @@
-import { ChevronDownIcon, ChevronUpIcon } from "@chakra-ui/icons";
 import {
   Badge,
-  Box,
+
   Button,
-  Center,
-  Circle,
+
+ 
   Divider,
-  Flex,
+
   HStack,
   Image,
-  Spacer,
+ 
   Spinner,
   Stack,
   Text,
@@ -34,7 +33,7 @@ const SingleProductPage = () => {
   const [bagbutton, setbagbutton] = useState(true);
 
     
-  const { CartDataToMatch, cartData, handleCart } = useContext(AppContext);
+  const { CartDataToMatch, handleCart } = useContext(AppContext);
 
   setTimeout(() => {
     setIsLoading(false);
