@@ -168,6 +168,7 @@ const LogOut_User = () => {
                   style={{ fontSize: 30, padding: 4, border:"0px solid green", marginLeft:"15px", marginBottom:"5px"}}
                 ></AccountCircleIcon>
               </span>
+              
             </div>
             {!isAuth && (
             <NavLink
