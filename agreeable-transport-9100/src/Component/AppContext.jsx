@@ -101,16 +101,7 @@ const AllProductsData = {
       id: "7",
     },
 
-    {
-      createdAt: "2022-11-11T02:06:49.054Z",
-      title: "Hotel The Dark Inn,Goa",
-      avatar:
-        "https://cf.bstatic.com/xdata/images/hotel/square600/322334158.webp?k=b8ce5ccf108773e0a5511e879ae738149440d1ff85fa8c8b7e07c5bb0470f270&o=&s=1",
-      categary: "Deluxe Room",
-      price: 4500,
-      Ratting: "4.4",
-      id: "8",
-    },
+   
 
     {
       createdAt: "2022-11-11T02:06:49.054Z",
@@ -248,9 +239,9 @@ const CartDataToMatch = [
   },
 
   {
-    id: 1,
+    id: 4,
     avatar:
-      "https://cf.bstatic.com/xdata/images/hotel/square600/292947302.webp?k=c1a6abd3ba458633983c99fdfec65f4315ff120da63a94a2a82559732a5ee5b7&o=&s=1",
+      "https://cf.bstatic.com/xdata/images/hotel/square600/103601620.webp?k=e8addf20164dc6d44495503b1f677cfa47dbda60d1839888caa1c819c6e9d587&o=&s=1",
     title: "Hotel Jannat Delhi",
     categary: "Deluxe Double Room (2 Adults + 1 Child)",
     price: 5200,
