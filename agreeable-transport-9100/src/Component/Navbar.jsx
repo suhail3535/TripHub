@@ -37,11 +37,7 @@ const [active, setActive] = useState("");
 /// LOGOUT
 const LogOut_User = () => {
   
-    Swal.fire({
-      icon: "error",
-      title: "Oops...",
-      text: "You are Logged Out!",
-    });
+      Swal.fire( "LoggedOut successfully!", "");
   logoutUser();
 };
 
