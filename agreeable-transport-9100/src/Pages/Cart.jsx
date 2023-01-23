@@ -92,7 +92,6 @@ const Cart = () => {
   }
 
   return (
-
     // maindiv
     <VStack marginTop="10px" justify="center" border="0px solid green">
       <Text fontSize="2xl" fontWeight="extrabold">
@@ -101,22 +100,16 @@ const Cart = () => {
 
       <Wrap padding={10} border="0px solid pink" spacing={50}>
         <VStack spacing={5}>
-          <HStack spacing={5} w="full" padding={3} bg="#fcffee">
-           
-          
-          
-          </HStack>
+          <HStack spacing={5} w="full" padding={3} bg="#fcffee"></HStack>
           {cartData.map((el) => (
             <CartSingleCard el={el} />
           ))}
         </VStack>
 
         <VStack spacing={5} style={{}}>
-          <HStack spacing={5} w="full" padding={3} bg="yellow.300">
-         
-            <Text fontWeight="bold">
-              Save extra ₹140 with TriBe
-            </Text> <Spacer /> <ArrowRightIcon /> 
+          <HStack spacing={5} w="full" padding={3} bg="cyan" borderRadius="5px">
+            <Text fontWeight="bold">Save extra ₹140 with TriBe</Text> <Spacer />{" "}
+            <ArrowRightIcon />
           </HStack>
 
           <Box
@@ -124,7 +117,6 @@ const Cart = () => {
             w={600}
             spacing={3}
             borderWidth="1px"
-           
             borderRadius="lg"
             overflow="hidden"
             padding="5"
@@ -161,13 +153,14 @@ const Cart = () => {
           </Box>
 
           <Stack
-            bg="gray.200"
+            bg="RGB(102 234 136)"
             w={600}
             spacing={3}
             borderWidth="1px"
             overflow="hidden"
             padding="5"
             textAlign="center"
+            borderRadius="5PX"
           >
             <Text fontWeight="bold" fontSize="20px">
               PRICE SUMMARY
@@ -177,7 +170,6 @@ const Cart = () => {
           <VStack
             fontSize="16px"
             padding="5"
-           
             w={600}
             spacing={5}
             borderWidth="1px"
@@ -187,18 +179,14 @@ const Cart = () => {
               <Text fontSize="18px">Total MRP (Incl. of taxes) </Text>
               <Spacer />
               <Text fontWeight="bold" fontSize="18px">
-              
                 ₹ {Totalprice}
               </Text>
             </HStack>
-
-           
 
             <HStack w="full">
               <Text fontSize="18px">Bag Discount </Text>
               <Spacer />
               <Text fontWeight="bold" fontSize="18px">
-              
                 - ₹{discountPrice}{" "}
               </Text>
             </HStack>
@@ -207,7 +195,6 @@ const Cart = () => {
               <Text fontSize="18px">Subtotal </Text>
               <Spacer />
               <Text fontWeight="bold" fontSize="18px">
-            
                 ₹{price}
               </Text>
             </HStack>
@@ -242,8 +229,6 @@ const Cart = () => {
               CheckOut
             </Button>
           </HStack>
-
-         
         </VStack>
       </Wrap>
     </VStack>
