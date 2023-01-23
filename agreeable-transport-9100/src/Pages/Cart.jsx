@@ -112,6 +112,8 @@ const Cart = () => {
             <ArrowRightIcon />
           </HStack>
 
+          
+          
           <Box
             fontSize="16px"
             w={600}
