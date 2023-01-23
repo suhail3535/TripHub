@@ -47,7 +47,7 @@ const Login = () => {
     <>
       <div className={styles.main}>
         <div className={styles.submain}>
-          <h1 style={{ fontWeight: "bold" }}>Welcome to TripHub !</h1>
+          <h1 style={{ fontWeight: "bold", fontSize:"40px" }}>Welcome to TripHub !</h1>
           <div style={{ width: "80%", margin: "auto" }}>
             <img
               style={{ width: "100%" }}
